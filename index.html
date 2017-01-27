@@ -14,6 +14,64 @@ http://www.tooplate.com/view/2056-simple-life
 <script type='text/javascript' src='js/jquery.min.js'></script>
 <script type='text/javascript' src='js/jquery.scrollTo-min.js'></script>
 <script type='text/javascript' src='js/jquery.localscroll-min.js'></script>
+<script type='text/javascript' src="js/jssor.slider-22.1.8.min.js"></script>
+<script type="text/javascript">
+    jssor_1_slider_init = function() {
+
+        var jssor_1_SlideoTransitions = [
+          [{b:0,d:600,y:-290,e:{y:27}}],
+          [{b:0,d:1000,y:185},{b:1000,d:500,o:-1},{b:1500,d:500,o:1},{b:2000,d:1500,r:360},{b:3500,d:1000,rX:30},{b:4500,d:500,rX:-30},{b:5000,d:1000,rY:30},{b:6000,d:500,rY:-30},{b:6500,d:500,sX:1},{b:7000,d:500,sX:-1},{b:7500,d:500,sY:1},{b:8000,d:500,sY:-1},{b:8500,d:500,kX:30},{b:9000,d:500,kX:-30},{b:9500,d:500,kY:30},{b:10000,d:500,kY:-30},{b:10500,d:500,c:{x:87.50,t:-87.50}},{b:11000,d:500,c:{x:-87.50,t:87.50}}],
+          [{b:0,d:600,x:410,e:{x:27}}],
+          [{b:-1,d:1,o:-1},{b:0,d:600,o:1,e:{o:5}}],
+          [{b:-1,d:1,c:{x:175.0,t:-175.0}},{b:0,d:800,c:{x:-175.0,t:175.0},e:{c:{x:7,t:7}}}],
+          [{b:-1,d:1,o:-1},{b:0,d:600,x:-570,o:1,e:{x:6}}],
+          [{b:-1,d:1,o:-1,r:-180},{b:0,d:800,o:1,r:180,e:{r:7}}],
+          [{b:0,d:1000,y:80,e:{y:24}},{b:1000,d:1100,x:570,y:170,o:-1,r:30,sX:9,sY:9,e:{x:2,y:6,r:1,sX:5,sY:5}}],
+          [{b:2000,d:600,rY:30}],
+          [{b:0,d:500,x:-105},{b:500,d:500,x:230},{b:1000,d:500,y:-120},{b:1500,d:500,x:-70,y:120},{b:2600,d:500,y:-80},{b:3100,d:900,y:160,e:{y:24}}],
+          [{b:0,d:1000,o:-0.4,rX:2,rY:1},{b:1000,d:1000,rY:1},{b:2000,d:1000,rX:-1},{b:3000,d:1000,rY:-1},{b:4000,d:1000,o:0.4,rX:-1,rY:-1}]
+        ];
+
+        var jssor_1_options = {
+          $FillMode: 0,
+          $AutoPlay: true,
+          $Idle: 2000,
+          $CaptionSliderOptions: {
+            $Class: $JssorCaptionSlideo$,
+            $Transitions: jssor_1_SlideoTransitions,
+            $Breaks: [
+              [{d:2000,b:1000}]
+            ]
+          },
+          $ArrowNavigatorOptions: {
+            $Class: $JssorArrowNavigator$
+          },
+          $BulletNavigatorOptions: {
+            $Class: $JssorBulletNavigator$
+          }
+        };
+
+        var jssor_1_slider = new $JssorSlider$("jssor_1", jssor_1_options);
+
+        /*responsive code begin*/
+        /*you can remove responsive code if you don't want the slider scales while window resizing*/
+        function ScaleSlider() {
+            var refSize = jssor_1_slider.$Elmt.parentNode.clientWidth;
+            if (refSize) {
+                refSize = Math.min(refSize, 600);
+                jssor_1_slider.$ScaleWidth(refSize);
+            }
+            else {
+                window.setTimeout(ScaleSlider, 30);
+            }
+        }
+        ScaleSlider();
+        $Jssor$.$AddEvent(window, "load", ScaleSlider);
+        $Jssor$.$AddEvent(window, "resize", ScaleSlider);
+        $Jssor$.$AddEvent(window, "orientationchange", ScaleSlider);
+        /*responsive code end*/
+    };
+</script>
 <script type="text/javascript">
 $(document).ready(function () {
 $.localScroll();
@@ -29,32 +87,43 @@ $.localScroll();
 				<ul>
 					<li><a href="#ki_vagyok" class="home">Ki vagyok? Kivagyok!</a></li>
 					<li><a href="#ajanlo" class="about">Ajánló</a></li>
-					<li><a href="#portfolio" class="portfolio"><span></span>Portfolio</a></li>
-					<li><a href="#services" class="services"><span></span>Services</a></li>
-					<li><a href="#contact" class="contact"><span></span>Contact</a></li>
+					<li><a href="#kepek" class="kepek"><span></span>Képek</a></li>
+					<li><a href="#videok" class="videok"><span></span>Videók</a></li>
+					<li><a href="#linkek" class="linkek"><span></span>Linkek</a></li>
+					<li><a href="#elerhetoseg" class="elerhetoseg"><span></span>Elérhetőségek</a></li>
 				</ul>
 				<div class="cleaner"></div>
 			</div> <!-- END of -->
 		</div>
 		<div id="tooplate_main">
+
+			<blockquote>
+			    <p class="quote">Mi a biztos? Talán csak annyi, hogy: Fölöttünk az ég, alattunk a föld</p>
+			    <footer class="quote_footer">— Szent Urolphus Szablya és kereszt</footer>
+			</blockquote>
 			
 			<div id="ki_vagyok" class="main_box">
 				<h1>Ki vagyok? Kivagyok!</h1>
-				<img src="images/apa_tabla_250.jpg" alt="image" class="img_frame img_float_l" />
+				<div class="imgdiv img_float_l">
+					<img src="images/apa_tabla.jpg" alt="image" class="img_frame img_float_l" />
+				</div>
 				<p><em>Bakos László</em></p>
 				<p align="justify">1958. január 29-én születtem Tiszanánán. Iskolai tanulmányaimat Tiszanánán, Szentendrén és Budapesten végeztem. Mezőgazdász, hivatásos katona, és gyógypedagógus végzettséggel rendelkezem. Baján hivatásos katonaként, Hevesen, majd Egerben gyógypedagógusként dolgoztam és dolgozok. Egy feleség, hat gyermek és egyelőre egy unoka tartozik a szűkebb családomba. Hobbim az írogatás. Eddigi szösszeneteim a koborlodeak.blogspot.com helyen olvashatók, illetve egy nagyobb lélegzetvételű könyv /legalábbis számomra/ a publioboox.com oldalon kapható, illetve egy része olvasható.</p>
 				<div class="cleaner h40"></div>
 				<div class="cleaner"></div>
-				<a href="#tooplate_main" class="gototop">Go To Top</a>
+				<a href="#tooplate_main" class="gototop">Tetejére</a>
 				<div class="cleaner"></div>
 			</div> <!-- END of home -->
-			
+
 			<div id="ajanlo" class="main_box">
-			  <h1>Szablya és kereszt</h1>
-			  <h2>Bere és Ajtony</h2>
-			  <h3>Bakos László</h3>
+			  <h1>Ajánló</h1>
+			  <h2>Szablya és kereszt</h2>
+			  <h3>Bere és Ajtony</h3>
+			  <h4>Bakos László</h4>
 			  <h4><a href="https://publioboox.com/">Publio</a></h4>
-			  <img src="images/szablya_250.jpg" alt="image" class="img_float_r img_frame" />
+			  <div class="imgdiv img_float_r">
+			  	<img src="images/szablya.jpg" alt="image" class="img_float_r img_frame" />
+			  </div>
 				<p><em>1. Álmodozás a Tisza partján</em></p>
 				<p>A felcsapódó hidegvíz ébreszt álmodozásomból. A szemeim elől nagyon nehezen tűnnek el a szeretett lány képei. Az őszi nagy lovas verseny előtt láttam meg először Gyöngyöt, akkor nagyon keveset tudtam beszélni vele. Beszélni, az túlzás, inkább csak néhány tréfásnak szánt kiáltást eresztettem meg feléje, és a barátnői felé. Mégis észrevettük egymást és én megszerettem azonnal, gondolataim mindig körülötte járnak, és egyre gyakrabban vagyok olyan, mint a holdkóros. A nyár végi nap óta minden alkalmat megragadtam arra, hogy átmehessek hozzájuk, hogy láthassam és beszélhessek vele. Érzem, hogy én is tetszek a lánynak, azért néz rám mindig olyan kedvesen. Az újabb és újabb vízsugarak végre teljesen észhez térítenek. A pajtásaim vidáman fröcskölik a vizet a folyó szélében. A lovaikról lehajolva elsősorban engem céloznak, látva, hogy nem figyelek. A lovam magától beleállt a vízbe és iszik. A ménes egy része térdig a vízben állva szintén iszik, a társaim pedig vidáman tréfálkoznak. Most nézek jobban körül, látom, hogy a ménest őrző barátaim nevetve rúgják és csapják felém a vizet. Én voltam a célpontja mindenkinek. Most is úgy elábrándoztam, - veszem észre magamat - mintha nem is én lennék, mintha csak a testem volt itt a Tisza partján, a lelkem és a gondolataim pedig a túlparton.
 				<ul>
@@ -77,99 +146,99 @@ $.localScroll();
 				    </ul></p>
 				</div>
 				<div class="cleaner"></div>
-					<a href="#tooplate_main" class="gototop">Go To Top</a>
+					<a href="#tooplate_main" class="gototop">Tetejére</a>
 				<div class="cleaner"></div>
 			</div> <!-- END of about -->
+
+			<div id="kepek" class="main_box">
+				<h1>Képek</h1>
+				<div id="jssor_1" style="position:relative;margin:0 auto;top:0px;left:0px;width:600px;height:300px;overflow:hidden;visibility:hidden;">
+			        <!-- Loading Screen -->
+			        <div data-u="loading" style="position: absolute; top: 0px; left: 0px;">
+			            <div style="filter: alpha(opacity=70); opacity: 0.7; position: absolute; display: block; top: 0px; left: 0px; width: 100%; height: 100%;"></div>
+			            <div style="position:absolute;display:block;background:url('images/loading.gif') no-repeat center center;top:0px;left:0px;width:100%;height:100%;"></div>
+			        </div>
+			        <div data-u="slides" style="cursor:default;position:relative;top:0px;left:0px;width:600px;height:300px;overflow:hidden;">
+			            <div>
+			                <img data-u="image" src="images/csalad.jpg" />
+			                <div data-u="caption" data-t="0" style="position:absolute;top:550px;left:30px;width:350px;height:30px;z-index:0;background-color:rgba(235,81,0,0.5);font-size:20px;color:#ffffff;line-height:30px;text-align:center;">A nagy család</div>
+			            </div>
+			            <div>
+			                <img data-u="image" src="images/barbara.jpg" />
+			                <div data-u="caption" data-t="0" style="position:absolute;top:550px;left:30px;width:350px;height:30px;z-index:0;background-color:rgba(235,81,0,0.5);font-size:20px;color:#ffffff;line-height:30px;text-align:center;">Barabara</div>
+			            </div>
+			            <div>
+			                <img data-u="image" src="images/termek_cimlapfoto.jpg" />
+			                <div data-u="caption" data-t="0" style="position:absolute;top:550px;left:30px;width:350px;height:30px;z-index:0;background-color:rgba(235,81,0,0.5);font-size:20px;color:#ffffff;line-height:30px;text-align:center;">Szablya és kereszt</div>
+			            </div>
+			            <div>
+			                <img data-u="image" src="images/apacs.jpg" />
+			                <div data-u="caption" data-t="0" style="position:absolute;top:550px;left:30px;width:350px;height:30px;z-index:0;background-color:rgba(235,81,0,0.5);font-size:20px;color:#ffffff;line-height:30px;text-align:center;">Apacs</div>
+			            </div>
+			            <div>
+			                <img data-u="image" src="images/tiszanana.jpg" />
+			                <div data-u="caption" data-t="0" style="position:absolute;top:550px;left:30px;width:350px;height:30px;z-index:0;background-color:rgba(235,81,0,0.5);font-size:20px;color:#ffffff;line-height:30px;text-align:center;">Tiszanána</div>
+			            </div>
+			            <div>
+			                <img data-u="image" src="images/images.png" />
+			                <div data-u="caption" data-t="0" style="position:absolute;top:550px;left:30px;width:350px;height:30px;z-index:0;background-color:rgba(235,81,0,0.5);font-size:20px;color:#ffffff;line-height:30px;text-align:center;">Nána-nána</div>
+			            </div>
+			            <div>
+			                <img data-u="image" src="images/12373305_968911383156342_9132618098794553148_n.jpg" />
+			                <div data-u="caption" data-t="0" style="position:absolute;top:550px;left:30px;width:350px;height:30px;z-index:0;background-color:rgba(235,81,0,0.5);font-size:20px;color:#ffffff;line-height:30px;text-align:center;">Portré</div>
+			            </div>
+			            <div>
+			                <img data-u="image" src="images/p1270340.jpg" />
+			                <div data-u="caption" data-t="0" style="position:absolute;top:550px;left:30px;width:350px;height:30px;z-index:0;background-color:rgba(235,81,0,0.5);font-size:20px;color:#ffffff;line-height:30px;text-align:center;">Előadás 1</div>
+			            </div>
+			            <div>
+			                <img data-u="image" src="images/img_6505.jpg" />
+			                <div data-u="caption" data-t="0" style="position:absolute;top:550px;left:30px;width:350px;height:30px;z-index:0;background-color:rgba(235,81,0,0.5);font-size:20px;color:#ffffff;line-height:30px;text-align:center;">Előadás 2</div>
+			            </div>
+			        </div>
+			        <!-- Bullet Navigator -->
+			        <div data-u="navigator" class="jssorb01" style="bottom:16px;right:16px;">
+			            <div data-u="prototype" style="width:12px;height:12px;"></div>
+			        </div>
+			        <!-- Arrow Navigator -->
+			        <span data-u="arrowleft" class="jssora02l" style="top:0px;left:8px;width:55px;height:55px;" data-autocenter="2"></span>
+			        <span data-u="arrowright" class="jssora02r" style="top:0px;right:8px;width:55px;height:55px;" data-autocenter="2"></span>
+			    </div>
+			    <script type="text/javascript">jssor_1_slider_init();</script>
+			    <div class="cleaner"></div>
+					<a href="#tooplate_main" class="gototop">Tetejére</a>
+				<div class="cleaner"></div>
+		    </div>
+
+		    <div id="videok" class="main_box">
+				<h1>Videók</h1>
+				<iframe width="560" height="315" src="https://www.youtube.com/embed/1YyVz-D9n3g" frameborder="0" allowfullscreen></iframe>
+				<div class="cleaner"></div>
+					<a href="#tooplate_main" class="gototop">Tetejére</a>
+				<div class="cleaner"></div>
+		    </div>
+
+		    <div id="linkek" class="main_box">
+				<h1>Linkek</h1>
+				<div class="link"><a href="http://koborlodeak.blogspot.hu/" target="_blank">Kóborló Deák blog</a><br /></div>
+				<div class="link"><a href="https://publioboox.com/" class="link" target="_blank">Publio kiadó</a><br /></div>
+				<div class="link"><a href="https://www.facebook.com/Történelmi-érdekességek-284129208654455/?fref=ts" class="link" target="_blank">Történelmi érdekességek</a><br /></div>
+				<div class="link"><a href="http://regenyestortenelem.network.hu/" class="link" target="_blank">Regényes történelem</a><br /></div>
+		    	<div class="cleaner"></div>
+					<a href="#tooplate_main" class="gototop">Tetejére</a>
+				<div class="cleaner"></div>
+		    </div>
 			
-			<div id="portfolio" class="main_box">
-				<h1>Our Portfolio</h1>
-				<ul id="gallery">
-					<li><a href="images/portfolio/01.jpg"><img src="images/portfolio/01.jpg" alt="Image 01" class="img_frame" /></a></li>
-					<li><a href="images/portfolio/02.jpg"><img src="images/portfolio/02.jpg" alt="Image 02" class="img_frame" /></a></li>
-					<li><a href="images/portfolio/03.jpg"><img src="images/portfolio/03.jpg" alt="Image 03" class="img_frame" /></a></li>
-					<li><a href="images/portfolio/04.jpg"><img src="images/portfolio/04.jpg" alt="Image 04" class="img_frame" /></a></li>              
-				</ul>
-				<div class="cleaner"></div>
-				<a href="#tooplate_main" class="gototop">Go To Top</a>
-				<div class="cleaner"></div>
-			</div> <!-- END of portfolio --> 
-			
-			<div id="services" class="main_box">
-				<h1>Our Services</h1>
-				<img src="images/tooplate_image_01.jpg" alt="Image 01" class="img_float_l img_frame" />
-				<p><em>Etiam vel purus ut eros ullamcorper faucibus ut ac mi. Sed eu elit diam. Sed cursus, sem eget auctor gravida, quam nunc faucibus diam, nec volutpat nunc nisi sed enim.</em></p>
-				<p> Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. <a href="#">Nam mauris ipsum</a>, pulvinar sit amet varius at, placerat ut felis. Curabitur consectetur aliquam purus, eget faucibus est ultrices iaculis. Suspendisse luctus mauris et erat imperdiet rutrum. Nulla fermentum ligula eu dolor venenatis nec rutrum nisl dictum. Nullam lobortis, nisi non ultricies semper. </p>
-				<p>Pellentesque gravida tempus sodales. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Nullam ante metus, <a href="#">mattis</a> in adipiscing in, bibendum sed purus. Cras eget nunc nisi, id mattis dui. Curabitur ac erat lacus, et posuere sapien. Curabitur metus turpis, lacinia et iaculis ac, pharetra vitae risus. Praesent a nunc sapien. Aliquam elementum sagittis ante, vitae interdum nunc tempor semper. Aenean eget nulla diam. Nullam orci urna, gravida vel fringilla non, condimentum vitae erat. Ut a augue a lorem sodales egestas. Quisque sodales sollicitudin sapien et sollicitudin.</p>
-				<div class="cleaner h40"></div>
-				<div class="col_12 float_l">
-					<h3>Our Services</h3>
-					<h6>Morbi luctus vitae cursus</h6>
-					<p>Curabitur metus turpis, lacinia et iaculis ac, pharetra vitae risus. Praesent a nunc sapien.</p>
-					<h6>Cum sociis natoque</h6>
-					<p>Pellentesque gravida tempus sodales. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus.</p>
-					<h6>Ut a augue a lorem</h6>
-					<p>Nullam orci urna, gravida vel fringilla non, condimentum vitae erat. Ut a augue a lorem sodales egestas.</p>
-				</div>
-				<div class="col_12 float_r">
-					<h3>Testimonials</h3>
-					<blockquote>
-						<p>Fusce nec felis id lacus sollicitudin vulputate. Proin tincidunt, arcu id pellentesque accumsan, neque dolor imperdiet ligula, quis viverra tellus nulla a odio. Curabitur vitae risus turpis. </p>
-						<cite>George - <span>Web Designer</span></cite>
-					</blockquote>
-					<blockquote>
-						<p>Sed interdum quam id neque convallis ac convallis tortor scelerisque. Etiam viverra dictum urna, vitae consectetur justo egestas vel. Ut vulputate eros, vehicula aliquet enim cursus vitae. </p>
-						<cite>Smith - <span>Internet Marketing Officer</span></cite> 
-					</blockquote>
-				</div>
-				<div class="cleaner"></div>
-				<a href="#tooplate_main" class="gototop">Go To Top</a>
-				<div class="cleaner"></div>
-			</div> <!-- END of services -->
-			
-			<div id="contact" class="main_box">
-				<h1>Contact Us</h1>
-				<p>Ut risus nibh, convallis viverra facilisis sit amet, scelerisque vitae lacus. Etiam sollicitudin vestibulum massa, ac malesuada leo volutpat vel. Praesent vitae est eget augue rutrum molestie. Donec hendrerit placerat nunc, et interdum felis vehicula a. Validate <a href="http://validator.w3.org/check?uri=referer" rel="nofollow"><strong>XHTML</strong></a> and <a href="http://jigsaw.w3.org/css-validator/check/referer" rel="nofollow"><strong>CSS</strong></a>.</p>
-					<div class="cleaner h30"></div>
-					<div class="col_12 float_l">
-					<h4>Quick Contact Form</h4>
-						<div id="contact_form">
-						
-							<form method="post" name="contact" action="#">
-								<label for="author">Name:</label> <input type="text" id="author" name="author" class="required input_field" />
-								<div class="cleaner h10"></div>
-															
-								<label for="email">Email:</label> <input type="text" class="validate-email required input_field" name="email" id="email" />
-								<div class="cleaner h10"></div>
-													
-								<label for="subject">Subject:</label> <input type="text" class="validate-subject required input_field" name="subject" id="subject"/>				               
-								<div class="cleaner h10"></div>
-									
-								<label for="text">Message:</label> <textarea id="text" name="text" rows="0" cols="0" class="required"></textarea>
-								<div class="cleaner h10"></div>				
-														
-								<input type="submit" value="Send" id="submit" name="submit" class="submit_btn float_l" />
-								<input type="reset" value="Reset" id="reset" name="reset" class="submit_btn float_r" />						
-							</form>		
-							
-						</div> 
+			<div id="elerhetoseg" class="main_box">
+				<h1>Elérhetőségek</h1>
+					<div class="link">
+						<b>Email:</b> <a href="mailto:erbak@freemail.hu">info@company.com</a>
 					</div>
-					
-					<div class="col_12 float_r">
-						<h4>Our Location</h4>
-						<iframe width="300" height="150" frameborder="0" scrolling="no" marginheight="0" marginwidth="0" src="http://maps.google.com/maps?f=q&amp;source=s_q&amp;hl=EN&amp;q=time+square&amp;aq=&amp;sll=40.716558,-73.931122&amp;sspn=0.40438,1.056747&amp;ie=UTF8&amp;rq=1&amp;ev=p&amp;split=1&amp;radius=33.22&amp;hq=time+square&amp;hnear=&amp;ll=37.061753,-95.677185&amp;spn=0.438347,0.769043&amp;z=9&amp;output=embed"></iframe><br /><small><a href="http://maps.google.com/maps?f=q&amp;source=embed&amp;hl=EN&amp;q=time+square&amp;aq=&amp;sll=40.716558,-73.931122&amp;sspn=0.40438,1.056747&amp;ie=UTF8&amp;rq=1&amp;ev=p&amp;split=1&amp;radius=33.22&amp;hq=time+square&amp;hnear=&amp;ll=37.061753,-95.677185&amp;spn=0.438347,0.769043&amp;z=9">View Larger Map</a></small>                
-						<div class="cleaner h30"></div>
-						
-						<h4>Mailing Address</h4>
-						<h6>Company Name</h6>
-						550-880 Duis lacinia dictum, <br />
-						Nunc porta ante vitae nisi, 10110<br />
-						Aenean molestie risus<br /><br />
-					
-						<b>Phone:</b> 030-030-0330<br />
-						<b>Email:</b> <a href="mailto:info@company.com">info@company.com</a> 
+					<div class="link">
+						<b>Facebook:</b> <a href="https://www.facebook.com/szablya/">https://www.facebook.com/szablya/</a>
 					</div>
 				<div class="cleaner"></div>
-				<a href="#tooplate_main" class="gototop">Go To Top</a>
+				<a href="#tooplate_main" class="gototop">Tetejére</a>
 				<div class="cleaner"></div>
 			</div> <!-- END of contact -->
 			
